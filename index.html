@@ -418,9 +418,9 @@
                                 <div class="sidebar_widget contact_form">
                                     <div class="widget_title">
                                         <h3 class="title">Get in Touch</h3>
-                                    </div>
+                                    </div> 
 
-                                    <form action="index.html">
+                                    <form id="myForm" action="https://formspree.io/f/xdoroabo" method="post">
                                         <div class="form_group">
                                             <input type="text" name="name" id="name" placeholder="Name"
                                                 autocomplete="off">
@@ -1101,7 +1101,7 @@
                             </div>
 
                             <div class="tj-contact-form">
-                                <form action="index.html">
+                                <form id="myForm" action="https://formspree.io/f/xdoroabo" method="post">
                                     <div class="row gx-3">
                                         <div class="col-sm-6">
                                             <div class="form_group">
@@ -1249,6 +1249,31 @@
     <script src="assets/js/magnific-popup.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Message sent successfully!');
+                    form.reset(); // Optionally reset the form after successful submission
+                } else {
+                    alert('Error: ' + xhr.statusText);
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+
+
+    
 </body>
 
 </html>

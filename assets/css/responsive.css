@@ -1,15 +1,4 @@
-@media only screen (device-width: 1280px) and (device-height: 600px) {
-	.work-list {
-        display: flex;
-        flex-wrap: wrap; /* Ensures the items wrap to the next line if there's not enough space */
-        justify-content: space-between; /* Distributes the items evenly along the main axis */
-    }
-	.work-list .work iframe {
-        width: calc(50% - 20px); /* Adjust the width as needed */
-    }
-	
-    /* Your CSS rules for NestHub with a screen resolution of 1280x600 */
-}
+
 
 
 @media only screen and (max-width: 1499px) {
@@ -263,17 +252,16 @@
 
 	/*Testimonial Iframe*/
 	.col-lg-5 iframe {
-        height: 400px; /* Increase the height of the iframe */
+        height: 400px; 
     }
 	
 	/*Testimonial Iframe*/
+
 	/*footer image*/
 	.contact-info-list img {
 		border-radius: 20px;
 		height: 100%;
 		width: 50%;
-		/* margin: 0 auto; Center the image horizontally */
-		/* display: block; Ensure the image is displayed as a block element */
 	}
 	/*footer image*/
 
@@ -846,14 +834,10 @@
 			border-radius: 20px;
 			height: 50%;
 			width: 50%;
-			margin: 0 auto; /* Center the image horizontally */
-			display: block; /* Ensure the image is displayed as a block element */
+			margin: 0 auto; 
+			display: block; 
 		}
 	  }
-
-	 /* .container .work-list .work{
-		display: grid;}
-	 */
 
 	.portfolio-filter .button-group {
 		padding: 0 8px;
