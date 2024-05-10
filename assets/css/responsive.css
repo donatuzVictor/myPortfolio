@@ -1,3 +1,17 @@
+@media only screen (device-width: 1280px) and (device-height: 600px) {
+	.work-list {
+        display: flex;
+        flex-wrap: wrap; /* Ensures the items wrap to the next line if there's not enough space */
+        justify-content: space-between; /* Distributes the items evenly along the main axis */
+    }
+	.work-list .work iframe {
+        width: calc(50% - 20px); /* Adjust the width as needed */
+    }
+	
+    /* Your CSS rules for NestHub with a screen resolution of 1280x600 */
+}
+
+
 @media only screen and (max-width: 1499px) {
 	.side-navbar {
 		display: none;
@@ -11,6 +25,17 @@
 
 /* Extra Large Devices */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+	.work-list {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+    }
+	iframe {
+		width: 100%; /* Adjust the width as needed */
+	}
+	
+
 	.tj-header-area .header-button {
 		margin-left: 35px;
 	}
@@ -31,6 +56,11 @@
 		font-size: 23px;
 	}
 
+	
+	}
+
+	
+
 	/* skills */
 	.skills-widget .skill-item {
 		max-width: 165px;
@@ -38,15 +68,29 @@
 	.skills-widget .skill-inner {
 		padding: 30px 15px 25px;
 	}
-}
+
 
 /* Large Devices */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+	.contact-info-list .gallery {
+        width: 70% !important; 
+    }
 	.services-section {
 		padding-top: 100px;
 		padding-bottom: 100px;
 	}
-
+	iframe {
+		width: 80%; 
+	}
+	
+	.work-list .work iframe {
+		height: 100%;
+	}
+	.work-list .work h3 {
+		font-size: 15px; }
+	
+	
 	.tj-header-area {
 		padding: 30px 0 15px;
 	}
@@ -189,6 +233,50 @@
 	h6 {
 		font-size: 16px;
 	}
+
+	/*iframe starts*/
+	work-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .work {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 10px;
+		font-size: 22px;
+    }
+
+	.work h3 {
+        font-size: 15px; /* Reduced font size for h3 within .work */
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border: none; /* Remove iframe borders */
+        border-radius: 10px; /* Apply border radius */
+    }
+	/*iframe ends*/
+
+	/*Testimonial Iframe*/
+	.col-lg-5 iframe {
+        height: 400px; /* Increase the height of the iframe */
+    }
+	
+	/*Testimonial Iframe*/
+	/*footer image*/
+	.contact-info-list img {
+		border-radius: 20px;
+		height: 100%;
+		width: 50%;
+		/* margin: 0 auto; Center the image horizontally */
+		/* display: block; Ensure the image is displayed as a block element */
+	}
+	/*footer image*/
+
 	.services-section {
 		padding-top: 80px;
 		padding-bottom: 80px;
@@ -689,6 +777,84 @@
 		padding-top: 60px;
 		padding-bottom: 30px;
 	}
+
+	/* #portfolio .work {
+		  width: 100%;
+		  padding: 5px;
+		}
+	  } */
+
+		#portfolio .work {
+		  width: 100%;
+		  padding: 5px;
+		  box-sizing: border-box;
+		}
+	  
+		#portfolio .work-list {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		  /* gap: 10px; */
+		  grid-gap: 40px;
+		}
+
+		#portfolio .work {
+			/* display: flex; */
+			justify-content: center;
+			align-items: center;
+		  }
+		
+	  
+		#portfolio .work iframe {
+		  width: 200%;
+		  height: auto;
+		  justify-content: center;
+		  align-items: center;
+		  /* border-radius: 10px; */
+		}
+		iframe{
+			border-radius: 10px;
+			justify-content: center;
+		  align-items: center;
+		  height: 10px;		  	  
+		  }
+		  #portfolio .work h3 {
+			font-size: 10px; 
+		  }
+
+		  .resume-widget iframe {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			justify-content: center;
+		  	align-items: center; 
+		}
+
+		.container iframe{
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			justify-content: center;
+		  	align-items: center; 
+		}
+		/*bottom image */
+		.col-lg-5.offset-lg-1.col-md-5.d-flex.flex-wrap.align-items-center.order-1.order-md-2 {
+			justify-content: center;
+			text-align: center;
+		}
+		
+		.contact-info-list img {
+			border-radius: 20px;
+			height: 50%;
+			width: 50%;
+			margin: 0 auto; /* Center the image horizontally */
+			display: block; /* Ensure the image is displayed as a block element */
+		}
+	  }
+
+	 /* .container .work-list .work{
+		display: grid;}
+	 */
+
 	.portfolio-filter .button-group {
 		padding: 0 8px;
 	}
