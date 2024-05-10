@@ -1251,40 +1251,42 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        const form = document.getElementById('myForm');
+        
+const form = document.getElementById('myForm');
+const msg = document.getElementById('msg');
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+form.addEventListener('submit', e => {
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    
-    const url = 'https://formspree.io/f/xdoroabo';
-
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Accept', 'application/json');
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Form submission successful
-                displayMessage('Message Sent');
-                form.reset(); // Optionally reset the form after successful submission
-            } else {
-                // Form submission failed
-                displayMessage('Error: ' + xhr.statusText);
-            }
-        }
-    };
-
-    xhr.send(formData);
+  
+  
+  // Create a new FormData object and populate it with the form data
+  const formData = new FormData(form);
+  
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+  
+  // Configure the request
+  xhr.open(form.method, form.action);
+  xhr.setRequestHeader('Accept', 'application/json');
+  
+  // Define the success callback function
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Form submission success
+      msg.innerHTML = 'Message Sent';
+    } else {
+      // Form submission error
+      msg.innerHTML = 'Error: ' + xhr.statusText;
+    }
+  };
+  
+  // Send the request
+  xhr.send(formData);
 });
 
-function displayMessage(message) {
-    const msgElement = document.getElementById('statusMsg');
-    msgElement.textContent = message;
-    msgElement.style.display = 'block'; // Show the message element
-}
+
+
 
     </script>
     
