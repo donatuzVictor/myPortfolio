@@ -177,7 +177,7 @@
                                 <img src="assets/img/hero/me.png" alt="">
                             </div>
 
-                            <p class="lead wow fadeInLeft" data-wow-delay="1.4s">A Data Storyteller who excels in crafting impactful and persuasive narratives through data. Combining the skills of a data analyst with the artistry of storytelling, utilizing data to create compelling report that resonates with the intended audience and effectively communicates insights. This captures the essence of my love for data and ability to harness the power of data to engage and connect with stakeholders on a deeper level for decision making.</p>
+                            <p class="lead wow fadeInLeft" data-wow-delay="1.4s">A Data Storyteller who excels in crafting impactful and persuasive narratives through data. Combining the skills of a data analyst with the artistry of storytelling, utilizing data to create compelling report that resonates with the intended audience and effectively communicates insights. This captures the essence of my passion for data and ability to harness the power of data to engage and connect with stakeholders on a deeper level for decision making.</p>
                             <div class="button-box d-flex flex-wrap align-items-center">
                                 <a href="assets/img/portfolio-gallery/Donatus Victor Resume.pdf" class="btn tj-btn-secondary wow fadeInLeft" data-wow-delay="1.5s">Download
                                     CV</a>
@@ -693,7 +693,7 @@
                                 </div>
                                 <h3 class="resume-title">Data Analyst </h3>
                                 <div class="institute">
-                                    Camanda
+                                    Camanda Tech Academy
                                 </div>
                             </div>
                             <div class="resume-item wow fadeInLeft" data-wow-delay=".7s">
@@ -1187,7 +1187,7 @@
                                     </div>
                                     <div class="text-box">
                                         <p>Address</p>
-                                        <a href="#"> <br>Nigeria</a>
+                                        <a href="#"><br>Lagos, Nigeria</a>
                                     </div>
 
                                 </li>
@@ -1251,33 +1251,30 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        const form = document.getElementById('myForm');
-    
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-    
-            const formData = new FormData(form);
-            const xhr = new XMLHttpRequest();
-    
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        // Handle successful form submission
-                        console.log('Form submitted successfully');
-                        alert('Form submitted successfully');
-                        form.reset(); // Optional: Reset the form fields after successful submission
-                    } else {
-                        // Handle form submission error
-                        console.error('Error submitting form');
-                        alert('Error submitting form');
-                    }
-                }
-            };
-    
-            xhr.open(form.method, form.action);
-            xhr.setRequestHeader('Accept', 'application/json');
-            xhr.send(formData);
-        });
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var form = e.target;
+  var formData = new FormData(form);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open(form.method, form.action);
+  xhr.setRequestHeader('Accept', 'application/json');
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      var msg = document.getElementById('msg');
+      if (xhr.status === 200) {
+        msg.innerHTML = 'Message Sent';
+        form.reset(); // Optional: Clear the form after successful submission
+      } else {
+        msg.innerHTML = 'Error: ' + xhr.statusText;
+      }
+    }
+  };
+
+  xhr.send(formData);
+});
     </script>
     
     
